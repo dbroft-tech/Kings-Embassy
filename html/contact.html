@@ -9,9 +9,119 @@
   <link rel="stylesheet" href="../css/style.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="../js/script.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
   <title>Document</title>
  </head>
  <body>
-  
+  <main class="container mx-auto px-4 py-8">
+    <!-- Hero Section -->
+    <section class="text-center py-12 md:py-20 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg mb-12">
+      <h1 class="text-4xl md:text-6xl font-bold mb-4">Contact Us</h1>
+      <p class="text-xl opacity-90">We'd Love to Hear from You</p>
+    </section>
+
+    <!-- Contact Information -->
+    <section class="py-12">
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="card text-center">
+          <div class="card-body">
+            <i class="bi bi-geo-alt text-4xl text-primary mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">Visit Us</h3>
+            <p class="text-gray-600">123 Church Street<br>City, State 12345</p>
+          </div>
+        </div>
+        <div class="card text-center">
+          <div class="card-body">
+            <i class="bi bi-telephone text-4xl text-primary mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">Call Us</h3>
+            <p class="text-gray-600">+1 234 567 890<br>+1 234 567 891</p>
+          </div>
+        </div>
+        <div class="card text-center">
+          <div class="card-body">
+            <i class="bi bi-envelope text-4xl text-primary mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">Email Us</h3>
+            <p class="text-gray-600">info@kingsembassy.org<br>support@kingsembassy.org</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map and Contact Form -->
+    <section class="py-12">
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Google Map -->
+        <div class="card">
+          <div class="card-body p-0">
+            <div id="map" style="height: 500px;"></div>
+          </div>
+        </div>
+        
+        <!-- Contact Form -->
+        <div class="card">
+          <div class="card-body">
+            <h2 class="text-2xl font-bold mb-6">Send Us a Message</h2>
+            <form id="contactForm">
+              <div class="mb-4">
+                <label for="fullName" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="fullName" required>
+              </div>
+              <div class="mb-4">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="email" required>
+              </div>
+              <div class="mb-4">
+                <label for="phone" class="form-label">Phone Number</label>
+                <input type="tel" class="form-control" id="phone">
+              </div>
+              <div class="mb-4">
+                <label for="subject" class="form-label">Subject</label>
+                <input type="text" class="form-control" id="subject" required>
+              </div>
+              <div class="mb-4">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" rows="5" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Times -->
+    <section class="py-12">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="text-2xl font-bold text-center mb-6">Service Times</h2>
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="text-center">
+              <h3 class="text-xl font-semibold mb-2">Sunday Services</h3>
+              <p class="text-gray-600">First Service: 8:00 AM - 10:00 AM<br>Second Service: 10:30 AM - 12:30 PM</p>
+            </div>
+            <div class="text-center">
+              <h3 class="text-xl font-semibold mb-2">Wednesday Service</h3>
+              <p class="text-gray-600">Bible Study: 6:00 PM - 8:00 PM</p>
+            </div>
+            <div class="text-center">
+              <h3 class="text-xl font-semibold mb-2">Friday Service</h3>
+              <p class="text-gray-600">Prayer Meeting: 7:00 PM - 9:00 PM</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social Media -->
+    <section class="py-12">
+      <h2 class="text-2xl font-bold text-center mb-6">Connect With Us</h2>
+      <div class="flex justify-center space-x-6">
+        <a href="#" class="text-4xl text-gray-600 hover:text-primary"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="text-4xl text-gray-600 hover:text-primary"><i class="bi bi-twitter-x"></i></a>
+        <a href="#" class="text-4xl text-gray-600 hover:text-primary"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="text-4xl text-gray-600 hover:text-primary"><i class="bi bi-youtube"></i></a>
+      </div>
+    </section>
+  </main>
  </body>
 </html>

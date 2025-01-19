@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Events and Conferences at Kings Embassy - Join us for life-changing gatherings">
+  <meta name="keywords" content="Kings Embassy, events, conferences, church events, christian conferences">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <!-- FullCalendar CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/@fullcalendar/core/main.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid/main.min.css" rel="stylesheet">
+  <!-- Lazy Loading -->
+  <script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- FullCalendar JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/core/main.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid/main.min.js"></script>
+  <script src="../js/script.js"></script>
+  <title>Events - Kings Embassy</title>
+ </head>
+ <body class="min-h-screen bg-gray-50">
+  <!-- Header/Navigation -->
+  <header class="bg-white shadow-sm sticky top-0 z-50">
+    <nav class="navbar navbar-expand-lg container">
+      <div class="container-fluid">
+        <a class="navbar-brand font-bold text-2xl" href="../index.html">
+          Kings Embassy
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="testimonies.html">Testimonies</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="first-timers.html">First Timers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="new-converts.html">New Converts</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="prayer-request.html">Prayer Request</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="events.html">Events</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="giving.html">Giving</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 py-8">
+    <!-- Hero Section -->
+    <section class="text-center py-12 md:py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg mb-12">
+      <h1 class="text-4xl md:text-6xl font-bold mb-4">Events & Conferences</h1>
+      <p class="text-xl opacity-90">Join Us for Life-Changing Gatherings</p>
+    </section>
+
+    <!-- Featured Event -->
+    <section class="py-12">
+      <div class="card overflow-hidden">
+        <div class="row g-0">
+          <div class="col-md-6">
+            <img data-src="../image/events/featured-event.jpg" class="lozad w-100 h-100 object-cover" alt="Featured Event" style="min-height: 400px;">
+          </div>
+          <div class="col-md-6">
+            <div class="card-body p-8">
+              <div class="badge bg-primary mb-2">Featured Event</div>
+              <h2 class="text-3xl font-bold mb-4">Annual Conference 2025</h2>
+              <p class="text-gray-600 mb-4">Join us for our annual conference as we explore the theme "Walking in Divine Purpose" with guest speakers from around the world.</p>
+              <div class="mb-4">
+                <p><i class="bi bi-calendar me-2"></i> March 15-17, 2025</p>
+                <p><i class="bi bi-clock me-2"></i> 9:00 AM - 5:00 PM</p>
+                <p><i class="bi bi-geo-alt me-2"></i> Main Auditorium</p>
+              </div>
+              <a href="#register" class="btn btn-primary btn-lg">Register Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Event Calendar -->
+    <section class="py-12">
+      <h2 class="text-3xl font-bold text-center mb-8">Upcoming Events</h2>
+      <div class="card">
+        <div class="card-body">
+          <div id="calendar"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Event Categories -->
+    <section class="py-12">
+      <h2 class="text-3xl font-bold text-center mb-8">Event Categories</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="card">
+          <div class="card-body text-center">
+            <i class="bi bi-music-note-beamed text-4xl text-primary mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">Worship Events</h3>
+            <p class="text-gray-600 mb-4">Special worship nights and musical celebrations.</p>
+            <a href="#" class="btn btn-outline-primary">View Events</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body text-center">
+            <i class="bi bi-book text-4xl text-primary mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">Bible Studies</h3>
+            <p class="text-gray-600 mb-4">In-depth study of God's Word and teachings.</p>
+            <a href="#" class="btn btn-outline-primary">View Events</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body text-center">
+            <i class="bi bi-people text-4xl text-primary mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">Conferences</h3>
+            <p class="text-gray-600 mb-4">Major conferences and special gatherings.</p>
+            <a href="#" class="btn btn-outline-primary">View Events</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body text-center">
+            <i class="bi bi-heart text-4xl text-primary mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">Outreach</h3>
+            <p class="text-gray-600 mb-4">Community service and evangelism events.</p>
+            <a href="#" class="btn btn-outline-primary">View Events</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Event Registration -->
+    <section id="register" class="py-12">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="text-3xl font-bold text-center mb-8">Event Registration</h2>
+          <form id="eventRegistrationForm" class="max-w-2xl mx-auto">
+            <div class="mb-4">
+              <label for="fullName" class="form-label">Full Name</label>
+              <input type="text" class="form-control" id="fullName" required>
+            </div>
+            <div class="row mb-4">
+              <div class="col-md-6">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="email" required>
+              </div>
+              <div class="col-md-6">
+                <label for="phone" class="form-label">Phone Number</label>
+                <input type="tel" class="form-control" id="phone" required>
+              </div>
+            </div>
+            <div class="mb-4">
+              <label for="event" class="form-label">Select Event</label>
+              <select class="form-select" id="event" required>
+                <option value="">Choose an event</option>
+                <option value="conference">Annual Conference 2025</option>
+                <option value="worship">Worship Night - February</option>
+                <option value="bible">Bible Study Conference</option>
+                <option value="outreach">Community Outreach</option>
+              </select>
+            </div>
+            <div class="mb-4">
+              <label for="tickets" class="form-label">Number of Tickets</label>
+              <select class="form-select" id="tickets" required>
+                <option value="1">1 Ticket</option>
+                <option value="2">2 Tickets</option>
+                <option value="3">3 Tickets</option>
+                <option value="4">4 Tickets</option>
+                <option value="5">5 Tickets</option>
+              </select>
+            </div>
+            <div class="mb-4">
+              <label for="dietary" class="form-label">Dietary Requirements</label>
+              <textarea class="form-control" id="dietary" rows="2"></textarea>
+            </div>
+            <div class="mb-4">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="newsletter" checked>
+                <label class="form-check-label" for="newsletter">
+                  Keep me updated about future events
+                </label>
+              </div>
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary btn-lg">Complete Registration</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Past Events -->
+    <section class="py-12">
+      <h2 class="text-3xl font-bold text-center mb-8">Past Events</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="card">
+          <img data-src="../image/events/past-event-1.jpg" class="lozad card-img-top" alt="Past Event 1">
+          <div class="card-body">
+            <h3 class="text-xl font-semibold mb-2">Christmas Concert 2024</h3>
+            <p class="text-gray-600 mb-4">A night of celebration and worship during the festive season.</p>
+            <a href="#" class="btn btn-link">View Gallery</a>
+          </div>
+        </div>
+        <div class="card">
+          <img data-src="../image/events/past-event-2.jpg" class="lozad card-img-top" alt="Past Event 2">
+          <div class="card-body">
+            <h3 class="text-xl font-semibold mb-2">Youth Conference 2024</h3>
+            <p class="text-gray-600 mb-4">Empowering young people to live purposefully.</p>
+            <a href="#" class="btn btn-link">View Gallery</a>
+          </div>
+        </div>
+        <div class="card">
+          <img data-src="../image/events/past-event-3.jpg" class="lozad card-img-top" alt="Past Event 3">
+          <div class="card-body">
+            <h3 class="text-xl font-semibold mb-2">Leadership Summit 2024</h3>
+            <p class="text-gray-600 mb-4">Building effective church leadership for the future.</p>
+            <a href="#" class="btn btn-link">View Gallery</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-3 gap-8">
+        <div>
+          <h4 class="text-xl font-bold mb-4">Kings Embassy</h4>
+          <p class="mb-4">A place of divine encounter where lives are transformed through the power of God's word.</p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-white hover:text-gray-300"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="text-white hover:text-gray-300"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="text-white hover:text-gray-300"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="text-white hover:text-gray-300"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-xl font-bold mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="about.html" class="hover:text-gray-300">About Us</a></li>
+            <li><a href="testimonies.html" class="hover:text-gray-300">Testimonies</a></li>
+            <li><a href="prayer-request.html" class="hover:text-gray-300">Prayer Request</a></li>
+            <li><a href="contact.html" class="hover:text-gray-300">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xl font-bold mb-4">Contact Info</h4>
+          <ul class="space-y-2">
+            <li><i class="bi bi-geo-alt me-2"></i> 123 Church Street, City</li>
+            <li><i class="bi bi-telephone me-2"></i> +1 234 567 890</li>
+            <li><i class="bi bi-envelope me-2"></i> info@kingsembassy.org</li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+        <p>&copy; 2025 Kings Embassy. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+ </body>
+</html>
