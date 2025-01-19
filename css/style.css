@@ -1,0 +1,103 @@
+/* 
+ * Kings Embassy Custom Styles
+ * Default CSS file for custom styling
+ * Last updated: 2025-01-19
+ */
+
+/* Custom Variables */
+:root {
+  --primary-color: #1a56db;
+  --secondary-color: #7e3af2;
+  --accent-color: #e3a008;
+  --text-primary: #1a1a1a;
+  --text-secondary: #4a5568;
+  --bg-light: #f7fafc;
+  --bg-dark: #1a202c;
+}
+
+/* Global Styles */
+html, body {
+  scroll-behavior: smooth;
+}
+
+/* Layout Components */
+.navbar {
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  color: var(--primary-color) !important;
+}
+
+.nav-link {
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--primary-color) !important;
+}
+
+/* UI Components */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.btn {
+  font-weight: 500;
+  padding: 0.625rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+  background-color: #1e40af;
+  border-color: #1e40af;
+}
+
+.btn-outline-primary {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+/* Utility Classes */
+.text-primary {
+  color: var(--primary-color) !important;
+}
+
+.bg-primary {
+  background-color: var(--primary-color) !important;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+  /* Tablet styles */
+  .navbar {
+    padding: 1rem 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Desktop styles */
+  .container {
+    max-width: 1200px;
+  }
+}
