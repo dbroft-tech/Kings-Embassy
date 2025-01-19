@@ -3,23 +3,15 @@
  <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Events and Conferences at Kings Embassy - Join us for life-changing gatherings">
-  <meta name="keywords" content="Kings Embassy, events, conferences, church events, christian conferences">
+  <meta name="description" content="Join us for upcoming events and conferences at Kings Embassy">
+  <meta name="keywords" content="Kings Embassy, church events, conferences, workshops, christian events">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="../css/style.css">
-  <!-- FullCalendar CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/@fullcalendar/core/main.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid/main.min.css" rel="stylesheet">
-  <!-- Lazy Loading -->
-  <script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- FullCalendar JS -->
-  <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/core/main.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid/main.min.js"></script>
   <script src="../js/script.js"></script>
-  <title>Events - Kings Embassy</title>
+  <title>Events & Conferences - Kings Embassy</title>
  </head>
  <body class="min-h-screen bg-gray-50">
   <!-- Header/Navigation -->
@@ -70,29 +62,30 @@
   <!-- Main Content -->
   <main class="container mx-auto px-4 py-8">
     <!-- Hero Section -->
-    <section class="text-center py-12 md:py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg mb-12">
+    <section class="text-center py-12 md:py-20 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg mb-12">
       <h1 class="text-4xl md:text-6xl font-bold mb-4">Events & Conferences</h1>
       <p class="text-xl opacity-90">Join Us for Life-Changing Gatherings</p>
     </section>
 
     <!-- Featured Event -->
     <section class="py-12">
-      <div class="card overflow-hidden">
-        <div class="row g-0">
-          <div class="col-md-6">
-            <img data-src="../image/events/featured-event.jpg" class="lozad w-100 h-100 object-cover" alt="Featured Event" style="min-height: 400px;">
-          </div>
-          <div class="col-md-6">
-            <div class="card-body p-8">
-              <div class="badge bg-primary mb-2">Featured Event</div>
-              <h2 class="text-3xl font-bold mb-4">Annual Conference 2025</h2>
-              <p class="text-gray-600 mb-4">Join us for our annual conference as we explore the theme "Walking in Divine Purpose" with guest speakers from around the world.</p>
-              <div class="mb-4">
-                <p><i class="bi bi-calendar me-2"></i> March 15-17, 2025</p>
-                <p><i class="bi bi-clock me-2"></i> 9:00 AM - 5:00 PM</p>
-                <p><i class="bi bi-geo-alt me-2"></i> Main Auditorium</p>
-              </div>
-              <a href="#register" class="btn btn-primary btn-lg">Register Now</a>
+      <div class="card bg-gradient-to-r from-purple-100 to-blue-100">
+        <div class="card-body p-8">
+          <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <span class="badge bg-primary mb-2">Featured Event</span>
+              <h2 class="text-3xl font-bold mb-4">Annual Kingdom Conference 2025</h2>
+              <p class="text-gray-600 mb-4">Join us for three days of powerful teachings, worship, and divine encounters.</p>
+              <ul class="space-y-2 mb-6">
+                <li><i class="bi bi-calendar me-2"></i> March 15-17, 2025</li>
+                <li><i class="bi bi-clock me-2"></i> 9:00 AM - 5:00 PM Daily</li>
+                <li><i class="bi bi-geo-alt me-2"></i> Main Auditorium</li>
+                <li><i class="bi bi-person me-2"></i> Guest Speakers from Around the World</li>
+              </ul>
+              <button class="btn btn-primary btn-lg">Register Now</button>
+            </div>
+            <div class="bg-gray-200 rounded-lg h-64 flex items-center justify-center">
+              <i class="bi bi-image text-6xl text-gray-400"></i>
             </div>
           </div>
         </div>
@@ -102,54 +95,92 @@
     <!-- Event Calendar -->
     <section class="py-12">
       <h2 class="text-3xl font-bold text-center mb-8">Upcoming Events</h2>
-      <div class="card">
-        <div class="card-body">
-          <div id="calendar"></div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Event Card 1 -->
+        <div class="card">
+          <div class="card-body">
+            <div class="text-primary mb-4">
+              <i class="bi bi-calendar-event text-2xl"></i>
+              <span class="ms-2">Feb 1, 2025</span>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Youth Empowerment Summit</h3>
+            <p class="text-gray-600 mb-4">A special program designed for young adults to discover their purpose.</p>
+            <button class="btn btn-outline-primary">Learn More</button>
+          </div>
+        </div>
+
+        <!-- Event Card 2 -->
+        <div class="card">
+          <div class="card-body">
+            <div class="text-primary mb-4">
+              <i class="bi bi-calendar-event text-2xl"></i>
+              <span class="ms-2">Feb 15, 2025</span>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Marriage & Family Conference</h3>
+            <p class="text-gray-600 mb-4">Building strong families through biblical principles and practical wisdom.</p>
+            <button class="btn btn-outline-primary">Learn More</button>
+          </div>
+        </div>
+
+        <!-- Event Card 3 -->
+        <div class="card">
+          <div class="card-body">
+            <div class="text-primary mb-4">
+              <i class="bi bi-calendar-event text-2xl"></i>
+              <span class="ms-2">Feb 28, 2025</span>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Business & Leadership Forum</h3>
+            <p class="text-gray-600 mb-4">Equipping marketplace leaders with godly principles for success.</p>
+            <button class="btn btn-outline-primary">Learn More</button>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Event Categories -->
+    <!-- Past Events -->
     <section class="py-12">
-      <h2 class="text-3xl font-bold text-center mb-8">Event Categories</h2>
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <h2 class="text-3xl font-bold text-center mb-8">Past Events</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Past Event 1 -->
         <div class="card">
-          <div class="card-body text-center">
-            <i class="bi bi-music-note-beamed text-4xl text-primary mb-4"></i>
-            <h3 class="text-xl font-semibold mb-2">Worship Events</h3>
-            <p class="text-gray-600 mb-4">Special worship nights and musical celebrations.</p>
-            <a href="#" class="btn btn-outline-primary">View Events</a>
+          <div class="card-body">
+            <div class="bg-gray-200 rounded h-48 mb-4 flex items-center justify-center">
+              <i class="bi bi-image text-4xl text-gray-400"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Christmas Concert 2024</h3>
+            <p class="text-gray-600 mb-4">A night of worship and celebration of our Savior's birth.</p>
+            <a href="#" class="btn btn-link text-primary p-0">View Gallery</a>
           </div>
         </div>
+
+        <!-- Past Event 2 -->
         <div class="card">
-          <div class="card-body text-center">
-            <i class="bi bi-book text-4xl text-primary mb-4"></i>
-            <h3 class="text-xl font-semibold mb-2">Bible Studies</h3>
-            <p class="text-gray-600 mb-4">In-depth study of God's Word and teachings.</p>
-            <a href="#" class="btn btn-outline-primary">View Events</a>
+          <div class="card-body">
+            <div class="bg-gray-200 rounded h-48 mb-4 flex items-center justify-center">
+              <i class="bi bi-image text-4xl text-gray-400"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Women's Conference 2024</h3>
+            <p class="text-gray-600 mb-4">Empowering women to walk in their divine purpose.</p>
+            <a href="#" class="btn btn-link text-primary p-0">View Gallery</a>
           </div>
         </div>
+
+        <!-- Past Event 3 -->
         <div class="card">
-          <div class="card-body text-center">
-            <i class="bi bi-people text-4xl text-primary mb-4"></i>
-            <h3 class="text-xl font-semibold mb-2">Conferences</h3>
-            <p class="text-gray-600 mb-4">Major conferences and special gatherings.</p>
-            <a href="#" class="btn btn-outline-primary">View Events</a>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-body text-center">
-            <i class="bi bi-heart text-4xl text-primary mb-4"></i>
-            <h3 class="text-xl font-semibold mb-2">Outreach</h3>
-            <p class="text-gray-600 mb-4">Community service and evangelism events.</p>
-            <a href="#" class="btn btn-outline-primary">View Events</a>
+          <div class="card-body">
+            <div class="bg-gray-200 rounded h-48 mb-4 flex items-center justify-center">
+              <i class="bi bi-image text-4xl text-gray-400"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Prayer Conference 2024</h3>
+            <p class="text-gray-600 mb-4">Three days of intensive prayer and spiritual warfare.</p>
+            <a href="#" class="btn btn-link text-primary p-0">View Gallery</a>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Event Registration -->
-    <section id="register" class="py-12">
+    <section class="py-12">
       <div class="card">
         <div class="card-body">
           <h2 class="text-3xl font-bold text-center mb-8">Event Registration</h2>
@@ -172,10 +203,10 @@
               <label for="event" class="form-label">Select Event</label>
               <select class="form-select" id="event" required>
                 <option value="">Choose an event</option>
-                <option value="conference">Annual Conference 2025</option>
-                <option value="worship">Worship Night - February</option>
-                <option value="bible">Bible Study Conference</option>
-                <option value="outreach">Community Outreach</option>
+                <option value="kingdom-conference">Annual Kingdom Conference 2025</option>
+                <option value="youth-summit">Youth Empowerment Summit</option>
+                <option value="marriage-conference">Marriage & Family Conference</option>
+                <option value="business-forum">Business & Leadership Forum</option>
               </select>
             </div>
             <div class="mb-4">
@@ -189,52 +220,13 @@
               </select>
             </div>
             <div class="mb-4">
-              <label for="dietary" class="form-label">Dietary Requirements</label>
-              <textarea class="form-control" id="dietary" rows="2"></textarea>
-            </div>
-            <div class="mb-4">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="newsletter" checked>
-                <label class="form-check-label" for="newsletter">
-                  Keep me updated about future events
-                </label>
-              </div>
+              <label for="specialRequests" class="form-label">Special Requests</label>
+              <textarea class="form-control" id="specialRequests" rows="3"></textarea>
             </div>
             <div class="text-center">
-              <button type="submit" class="btn btn-primary btn-lg">Complete Registration</button>
+              <button type="submit" class="btn btn-primary btn-lg">Register for Event</button>
             </div>
           </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- Past Events -->
-    <section class="py-12">
-      <h2 class="text-3xl font-bold text-center mb-8">Past Events</h2>
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="card">
-          <img data-src="../image/events/past-event-1.jpg" class="lozad card-img-top" alt="Past Event 1">
-          <div class="card-body">
-            <h3 class="text-xl font-semibold mb-2">Christmas Concert 2024</h3>
-            <p class="text-gray-600 mb-4">A night of celebration and worship during the festive season.</p>
-            <a href="#" class="btn btn-link">View Gallery</a>
-          </div>
-        </div>
-        <div class="card">
-          <img data-src="../image/events/past-event-2.jpg" class="lozad card-img-top" alt="Past Event 2">
-          <div class="card-body">
-            <h3 class="text-xl font-semibold mb-2">Youth Conference 2024</h3>
-            <p class="text-gray-600 mb-4">Empowering young people to live purposefully.</p>
-            <a href="#" class="btn btn-link">View Gallery</a>
-          </div>
-        </div>
-        <div class="card">
-          <img data-src="../image/events/past-event-3.jpg" class="lozad card-img-top" alt="Past Event 3">
-          <div class="card-body">
-            <h3 class="text-xl font-semibold mb-2">Leadership Summit 2024</h3>
-            <p class="text-gray-600 mb-4">Building effective church leadership for the future.</p>
-            <a href="#" class="btn btn-link">View Gallery</a>
-          </div>
         </div>
       </div>
     </section>

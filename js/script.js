@@ -31,9 +31,7 @@ function initializeApp() {
     setupEventRegistrationForm();
     setupOnlineGivingForm();
     setupContactForm();
-    initializeLazyLoading();
-    initializeCalendar();
-    initializeGoogleMap();
+    initializeMap();
 }
 
 /**
@@ -365,8 +363,7 @@ function setupEventRegistrationForm() {
             phone: document.getElementById('phone').value,
             event: document.getElementById('event').value,
             tickets: document.getElementById('tickets').value,
-            dietary: document.getElementById('dietary').value,
-            newsletter: document.getElementById('newsletter').checked
+            specialRequests: document.getElementById('specialRequests').value
         };
 
         // Validate form data
@@ -424,25 +421,22 @@ function setupOnlineGivingForm() {
         
         // Get form data
         const formData = {
-            amount: document.getElementById('amount').value,
-            category: document.getElementById('givingCategory').value,
-            frequency: document.getElementById('frequency').value,
             fullName: document.getElementById('fullName').value,
             email: document.getElementById('email').value,
             phone: document.getElementById('phone').value,
-            anonymous: document.getElementById('anonymous').checked
+            givingType: document.getElementById('givingType').value,
+            amount: document.getElementById('amount').value,
+            notes: document.getElementById('notes').value
         };
 
         // Validate form data
         if (!validateOnlineGivingForm(formData)) return;
 
         // Show success message
-        showAlert('Thank you for your generous gift! You will be redirected to our secure payment gateway.', 'success');
+        showAlert('Thank you for your generosity! You will be redirected to our secure payment gateway.', 'success');
         
         // Reset form
-        setTimeout(() => {
-            form.reset();
-        }, 3000);
+        form.reset();
     });
 }
 
@@ -450,21 +444,6 @@ function setupOnlineGivingForm() {
  * Validate online giving form data
  */
 function validateOnlineGivingForm(data) {
-    if (!data.amount || data.amount < 1) {
-        showAlert('Please enter a valid amount', 'error');
-        return false;
-    }
-
-    if (!data.category) {
-        showAlert('Please select a giving category', 'error');
-        return false;
-    }
-
-    if (!data.frequency) {
-        showAlert('Please select giving frequency', 'error');
-        return false;
-    }
-
     if (!data.fullName || data.fullName.trim().length < 2) {
         showAlert('Please enter your full name', 'error');
         return false;
@@ -472,6 +451,21 @@ function validateOnlineGivingForm(data) {
 
     if (!data.email || !isValidEmail(data.email)) {
         showAlert('Please enter a valid email address', 'error');
+        return false;
+    }
+
+    if (data.phone && !isValidPhone(data.phone)) {
+        showAlert('Please enter a valid phone number or leave it blank', 'error');
+        return false;
+    }
+
+    if (!data.givingType) {
+        showAlert('Please select the type of giving', 'error');
+        return false;
+    }
+
+    if (!data.amount || data.amount < 1) {
+        showAlert('Please enter a valid amount', 'error');
         return false;
     }
 
@@ -488,158 +482,59 @@ function setupContactForm() {
     form.addEventListener('submit', function(e) {
         e.preventDefault();
         
-        // Get form data
-        const formData = {
-            fullName: document.getElementById('fullName').value,
-            email: document.getElementById('email').value,
-            phone: document.getElementById('phone').value,
-            subject: document.getElementById('subject').value,
-            message: document.getElementById('message').value
-        };
-
-        // Validate form data
-        if (!validateContactForm(formData)) return;
-
-        // Show success message
-        showAlert('Thank you for your message! We will get back to you soon.', 'success');
+        // Get form values
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const subject = document.getElementById('subject').value;
+        const message = document.getElementById('message').value;
         
-        // Reset form
+        // Validate form
+        if (!name || !email || !subject || !message) {
+            alert('Please fill in all required fields');
+            return;
+        }
+        
+        // Here you would typically send the form data to your backend
+        // For now, we'll just show a success message
+        alert('Thank you for your message! We will get back to you soon.');
         form.reset();
     });
 }
 
 /**
- * Validate contact form data
- */
-function validateContactForm(data) {
-    if (!data.fullName || data.fullName.trim().length < 2) {
-        showAlert('Please enter your full name', 'error');
-        return false;
-    }
-
-    if (!data.email || !isValidEmail(data.email)) {
-        showAlert('Please enter a valid email address', 'error');
-        return false;
-    }
-
-    if (data.phone && !isValidPhone(data.phone)) {
-        showAlert('Please enter a valid phone number or leave it blank', 'error');
-        return false;
-    }
-
-    if (!data.subject || data.subject.trim().length < 2) {
-        showAlert('Please enter a subject', 'error');
-        return false;
-    }
-
-    if (!data.message || data.message.trim().length < 10) {
-        showAlert('Please enter your message (minimum 10 characters)', 'error');
-        return false;
-    }
-
-    return true;
-}
-
-/**
- * Initialize lazy loading for images
- */
-function initializeLazyLoading() {
-    const observer = lozad();
-    observer.observe();
-}
-
-/**
- * Initialize FullCalendar
- */
-function initializeCalendar() {
-    const calendarEl = document.getElementById('calendar');
-    if (!calendarEl) return;
-
-    const calendar = new FullCalendar.Calendar(calendarEl, {
-        initialView: 'dayGridMonth',
-        events: [
-            {
-                title: 'Annual Conference 2025',
-                start: '2025-03-15',
-                end: '2025-03-17',
-                className: 'bg-primary'
-            },
-            {
-                title: 'Worship Night',
-                start: '2025-02-28',
-                className: 'bg-success'
-            },
-            {
-                title: 'Bible Study Conference',
-                start: '2025-04-10',
-                end: '2025-04-12',
-                className: 'bg-info'
-            }
-        ],
-        headerToolbar: {
-            left: 'prev,next today',
-            center: 'title',
-            right: 'dayGridMonth,dayGridWeek'
-        }
-    });
-
-    calendar.render();
-}
-
-/**
  * Initialize Google Map
  */
-function initializeGoogleMap() {
+function initializeMap() {
     const mapElement = document.getElementById('map');
-    if (!mapElement) return;
-
-    // Church location coordinates
-    const churchLocation = { lat: 40.7128, lng: -74.0060 }; // Replace with actual coordinates
-
-    // Create map
-    const map = new google.maps.Map(mapElement, {
-        center: churchLocation,
-        zoom: 15,
-        styles: [
-            {
-                "featureType": "poi.business",
-                "stylers": [{"visibility": "off"}]
-            },
-            {
-                "featureType": "transit",
-                "elementType": "labels.icon",
-                "stylers": [{"visibility": "off"}]
-            }
-        ]
-    });
-
-    // Add marker
-    const marker = new google.maps.Marker({
-        position: churchLocation,
-        map: map,
-        title: 'Kings Embassy Church'
-    });
-
-    // Add info window
-    const infoWindow = new google.maps.InfoWindow({
-        content: `
-            <div class="p-2">
-                <h3 class="font-bold mb-1">Kings Embassy Church</h3>
-                <p class="text-sm">123 Church Street, City</p>
-                <p class="text-sm mt-1">
-                    <a href="https://www.google.com/maps/dir/?api=1&destination=${churchLocation.lat},${churchLocation.lng}" 
-                       target="_blank" class="text-blue-600">
-                        Get Directions
-                    </a>
-                </p>
-            </div>
-        `
-    });
-
-    // Show info window on marker click
-    marker.addListener('click', () => {
-        infoWindow.open(map, marker);
-    });
+    if (mapElement) {
+        // Replace with your church's coordinates
+        const churchLocation = { lat: 40.7128, lng: -74.0060 };
+        
+        const map = new google.maps.Map(mapElement, {
+            zoom: 15,
+            center: churchLocation,
+            styles: [
+                {
+                    featureType: 'poi.business',
+                    stylers: [{ visibility: 'off' }]
+                },
+                {
+                    featureType: 'transit',
+                    elementType: 'labels.icon',
+                    stylers: [{ visibility: 'off' }]
+                }
+            ]
+        });
+        
+        // Add a marker for the church
+        new google.maps.Marker({
+            position: churchLocation,
+            map: map,
+            title: 'Kings Embassy',
+            animation: google.maps.Animation.DROP
+        });
+    }
 }
 
 /**

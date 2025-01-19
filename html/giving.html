@@ -3,17 +3,15 @@
  <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Support Kings Embassy through giving and donations - Partner with us in spreading the Gospel">
-  <meta name="keywords" content="Kings Embassy, giving, donations, tithes, offerings, church giving">
+  <meta name="description" content="Support the vision of Kings Embassy through your giving">
+  <meta name="keywords" content="Kings Embassy, giving, donations, tithes, offerings, church projects">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="../css/style.css">
-  <!-- Lazy Loading -->
-  <script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="../js/script.js"></script>
-  <title>Giving - Kings Embassy</title>
+  <title>Giving & Donations - Kings Embassy</title>
  </head>
  <body class="min-h-screen bg-gray-50">
   <!-- Header/Navigation -->
@@ -65,112 +63,68 @@
   <main class="container mx-auto px-4 py-8">
     <!-- Hero Section -->
     <section class="text-center py-12 md:py-20 bg-gradient-to-r from-green-600 to-teal-600 text-white rounded-lg mb-12">
-      <h1 class="text-4xl md:text-6xl font-bold mb-4">Partner With Us</h1>
-      <p class="text-xl opacity-90">Support the Vision and Mission of Kings Embassy</p>
+      <h1 class="text-4xl md:text-6xl font-bold mb-4">Giving & Donations</h1>
+      <p class="text-xl opacity-90">Partner with Us in Kingdom Expansion</p>
     </section>
 
-    <!-- Giving Options -->
+    <!-- Scripture Section -->
     <section class="py-12">
-      <h2 class="text-3xl font-bold text-center mb-8">Ways to Give</h2>
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="card text-center">
-          <div class="card-body">
-            <i class="bi bi-bank text-4xl text-primary mb-4"></i>
-            <h3 class="text-xl font-semibold mb-2">Bank Transfer</h3>
-            <p class="text-gray-600 mb-4">Make a direct bank transfer to our account.</p>
-            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#bankDetailsModal">View Bank Details</button>
-          </div>
-        </div>
-        <div class="card text-center">
-          <div class="card-body">
-            <i class="bi bi-credit-card text-4xl text-primary mb-4"></i>
-            <h3 class="text-xl font-semibold mb-2">Online Giving</h3>
-            <p class="text-gray-600 mb-4">Give securely using your credit/debit card.</p>
-            <a href="#online-giving" class="btn btn-primary">Give Online</a>
-          </div>
-        </div>
-        <div class="card text-center">
-          <div class="card-body">
-            <i class="bi bi-phone text-4xl text-primary mb-4"></i>
-            <h3 class="text-xl font-semibold mb-2">Mobile Money</h3>
-            <p class="text-gray-600 mb-4">Send your gift via mobile money transfer.</p>
-            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mobileMoneyModal">View Numbers</button>
-          </div>
-        </div>
+      <div class="text-center max-w-3xl mx-auto">
+        <blockquote class="text-2xl font-serif italic mb-4">
+          "Each of you should give what you have decided in your heart to give, not reluctantly or under compulsion, for God loves a cheerful giver."
+        </blockquote>
+        <p class="text-gray-600">- 2 Corinthians 9:7</p>
       </div>
     </section>
 
     <!-- Giving Categories -->
     <section class="py-12">
-      <h2 class="text-3xl font-bold text-center mb-8">Giving Categories</h2>
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <h2 class="text-3xl font-bold text-center mb-8">Ways to Give</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Tithes -->
         <div class="card">
           <div class="card-body text-center">
-            <i class="bi bi-gift text-4xl text-primary mb-4"></i>
-            <h3 class="text-xl font-semibold mb-2">Tithes & Offerings</h3>
-            <p class="text-gray-600 mb-4">Regular tithes and offerings to support the church.</p>
-            <a href="#online-giving" class="btn btn-outline-primary">Give Now</a>
+            <div class="text-primary mb-4">
+              <i class="bi bi-gift text-4xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Tithes</h3>
+            <p class="text-gray-600 mb-4">Support the ongoing work of the ministry through your faithful tithing.</p>
+            <button class="btn btn-primary">Give Tithe</button>
           </div>
         </div>
+
+        <!-- Offerings -->
         <div class="card">
           <div class="card-body text-center">
-            <i class="bi bi-house-heart text-4xl text-primary mb-4"></i>
-            <h3 class="text-xl font-semibold mb-2">Building Project</h3>
-            <p class="text-gray-600 mb-4">Support our church building expansion project.</p>
-            <a href="#online-giving" class="btn btn-outline-primary">Give Now</a>
+            <div class="text-primary mb-4">
+              <i class="bi bi-heart text-4xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Offerings</h3>
+            <p class="text-gray-600 mb-4">Give your offerings to support various church programs and activities.</p>
+            <button class="btn btn-primary">Give Offering</button>
           </div>
         </div>
+
+        <!-- Project Support -->
         <div class="card">
           <div class="card-body text-center">
-            <i class="bi bi-globe text-4xl text-primary mb-4"></i>
-            <h3 class="text-xl font-semibold mb-2">Missions</h3>
-            <p class="text-gray-600 mb-4">Support our global missions and outreach programs.</p>
-            <a href="#online-giving" class="btn btn-outline-primary">Give Now</a>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-body text-center">
-            <i class="bi bi-heart text-4xl text-primary mb-4"></i>
-            <h3 class="text-xl font-semibold mb-2">Charity</h3>
-            <p class="text-gray-600 mb-4">Help us support those in need in our community.</p>
-            <a href="#online-giving" class="btn btn-outline-primary">Give Now</a>
+            <div class="text-primary mb-4">
+              <i class="bi bi-building text-4xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Project Support</h3>
+            <p class="text-gray-600 mb-4">Partner with us in our building and expansion projects.</p>
+            <button class="btn btn-primary">Support Projects</button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Online Giving Form -->
-    <section id="online-giving" class="py-12">
+    <!-- Online Giving -->
+    <section class="py-12">
       <div class="card">
         <div class="card-body">
           <h2 class="text-3xl font-bold text-center mb-8">Online Giving</h2>
           <form id="onlineGivingForm" class="max-w-2xl mx-auto">
-            <div class="mb-4">
-              <label for="amount" class="form-label">Amount</label>
-              <div class="input-group">
-                <span class="input-group-text">$</span>
-                <input type="number" class="form-control" id="amount" min="1" required>
-              </div>
-            </div>
-            <div class="mb-4">
-              <label for="givingCategory" class="form-label">Giving Category</label>
-              <select class="form-select" id="givingCategory" required>
-                <option value="">Select a category</option>
-                <option value="tithe">Tithes</option>
-                <option value="offering">Offerings</option>
-                <option value="building">Building Project</option>
-                <option value="missions">Missions</option>
-                <option value="charity">Charity</option>
-              </select>
-            </div>
-            <div class="mb-4">
-              <label for="frequency" class="form-label">Giving Frequency</label>
-              <select class="form-select" id="frequency" required>
-                <option value="once">One Time</option>
-                <option value="weekly">Weekly</option>
-                <option value="monthly">Monthly</option>
-              </select>
-            </div>
             <div class="mb-4">
               <label for="fullName" class="form-label">Full Name</label>
               <input type="text" class="form-control" id="fullName" required>
@@ -186,17 +140,64 @@
               </div>
             </div>
             <div class="mb-4">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="anonymous">
-                <label class="form-check-label" for="anonymous">
-                  Make this an anonymous gift
-                </label>
+              <label for="givingType" class="form-label">Type of Giving</label>
+              <select class="form-select" id="givingType" required>
+                <option value="">Select type</option>
+                <option value="tithe">Tithe</option>
+                <option value="offering">Offering</option>
+                <option value="project">Project Support</option>
+                <option value="missions">Missions</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="mb-4">
+              <label for="amount" class="form-label">Amount</label>
+              <div class="input-group">
+                <span class="input-group-text">$</span>
+                <input type="number" class="form-control" id="amount" min="1" required>
               </div>
             </div>
+            <div class="mb-4">
+              <label for="notes" class="form-label">Additional Notes</label>
+              <textarea class="form-control" id="notes" rows="3"></textarea>
+            </div>
             <div class="text-center">
-              <button type="submit" class="btn btn-primary btn-lg">Proceed to Payment</button>
+              <button type="submit" class="btn btn-primary btn-lg">Proceed to Give</button>
             </div>
           </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bank Transfer -->
+    <section class="py-12">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="text-3xl font-bold text-center mb-8">Bank Transfer Details</h2>
+          <div class="max-w-2xl mx-auto">
+            <div class="space-y-6">
+              <div class="p-4 bg-gray-50 rounded-lg">
+                <h3 class="font-semibold mb-2">Local Bank Transfer</h3>
+                <ul class="space-y-2">
+                  <li><strong>Bank Name:</strong> Example Bank</li>
+                  <li><strong>Account Name:</strong> Kings Embassy Church</li>
+                  <li><strong>Account Number:</strong> 1234567890</li>
+                  <li><strong>Sort Code:</strong> 12-34-56</li>
+                </ul>
+              </div>
+              <div class="p-4 bg-gray-50 rounded-lg">
+                <h3 class="font-semibold mb-2">International Transfer</h3>
+                <ul class="space-y-2">
+                  <li><strong>Bank Name:</strong> Example Bank International</li>
+                  <li><strong>SWIFT/BIC:</strong> EXAMPLEBK</li>
+                  <li><strong>IBAN:</strong> GB12 EXAM 1234 5678 9012 34</li>
+                </ul>
+              </div>
+            </div>
+            <div class="mt-6 text-center text-gray-600">
+              <p>Please include your name and purpose of giving in the transfer reference.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -204,112 +205,72 @@
     <!-- Project Updates -->
     <section class="py-12">
       <h2 class="text-3xl font-bold text-center mb-8">Project Updates</h2>
-      <div class="grid md:grid-cols-3 gap-6">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Project 1 -->
         <div class="card">
-          <img data-src="../image/projects/building.jpg" class="lozad card-img-top" alt="Building Project">
           <div class="card-body">
-            <h3 class="text-xl font-semibold mb-2">Building Project</h3>
-            <div class="mb-4">
-              <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
-              </div>
-              <p class="text-sm text-gray-600 mt-2">$750,000 raised of $1,000,000 goal</p>
+            <div class="bg-gray-200 rounded h-48 mb-4 flex items-center justify-center">
+              <i class="bi bi-image text-4xl text-gray-400"></i>
             </div>
-            <p class="text-gray-600 mb-4">Construction of the new sanctuary is progressing well. The foundation work is complete.</p>
-            <a href="#" class="btn btn-link">View Details</a>
+            <h3 class="text-xl font-semibold mb-2">New Auditorium</h3>
+            <div class="mb-4">
+              <div class="flex justify-between text-sm text-gray-600 mb-1">
+                <span>Progress</span>
+                <span>75%</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-2.5">
+                <div class="bg-primary h-2.5 rounded-full" style="width: 75%"></div>
+              </div>
+            </div>
+            <p class="text-gray-600 mb-4">Construction of our new 5000-seater auditorium is progressing well.</p>
+            <button class="btn btn-outline-primary">View Details</button>
           </div>
         </div>
+
+        <!-- Project 2 -->
         <div class="card">
-          <img data-src="../image/projects/missions.jpg" class="lozad card-img-top" alt="Missions Project">
           <div class="card-body">
-            <h3 class="text-xl font-semibold mb-2">Missions Project</h3>
-            <div class="mb-4">
-              <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">40%</div>
-              </div>
-              <p class="text-sm text-gray-600 mt-2">$20,000 raised of $50,000 goal</p>
+            <div class="bg-gray-200 rounded h-48 mb-4 flex items-center justify-center">
+              <i class="bi bi-image text-4xl text-gray-400"></i>
             </div>
-            <p class="text-gray-600 mb-4">Supporting missionary work in 5 countries, reaching thousands with the Gospel.</p>
-            <a href="#" class="btn btn-link">View Details</a>
+            <h3 class="text-xl font-semibold mb-2">Community Center</h3>
+            <div class="mb-4">
+              <div class="flex justify-between text-sm text-gray-600 mb-1">
+                <span>Progress</span>
+                <span>40%</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-2.5">
+                <div class="bg-primary h-2.5 rounded-full" style="width: 40%"></div>
+              </div>
+            </div>
+            <p class="text-gray-600 mb-4">Building a center to serve our local community with various programs.</p>
+            <button class="btn btn-outline-primary">View Details</button>
           </div>
         </div>
+
+        <!-- Project 3 -->
         <div class="card">
-          <img data-src="../image/projects/charity.jpg" class="lozad card-img-top" alt="Charity Project">
           <div class="card-body">
-            <h3 class="text-xl font-semibold mb-2">Community Support</h3>
-            <div class="mb-4">
-              <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>
-              </div>
-              <p class="text-sm text-gray-600 mt-2">$45,000 raised of $50,000 goal</p>
+            <div class="bg-gray-200 rounded h-48 mb-4 flex items-center justify-center">
+              <i class="bi bi-image text-4xl text-gray-400"></i>
             </div>
-            <p class="text-gray-600 mb-4">Providing food and essential supplies to families in need in our community.</p>
-            <a href="#" class="btn btn-link">View Details</a>
+            <h3 class="text-xl font-semibold mb-2">Mission Outreach</h3>
+            <div class="mb-4">
+              <div class="flex justify-between text-sm text-gray-600 mb-1">
+                <span>Progress</span>
+                <span>90%</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-2.5">
+                <div class="bg-primary h-2.5 rounded-full" style="width: 90%"></div>
+              </div>
+            </div>
+            <p class="text-gray-600 mb-4">Supporting missionary work in remote areas and providing aid.</p>
+            <button class="btn btn-outline-primary">View Details</button>
           </div>
         </div>
       </div>
     </section>
   </main>
-
-  <!-- Bank Details Modal -->
-  <div class="modal fade" id="bankDetailsModal" tabindex="-1">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Bank Transfer Details</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
-        <div class="modal-body">
-          <div class="mb-4">
-            <h6 class="font-semibold">Bank Name</h6>
-            <p>First National Bank</p>
-          </div>
-          <div class="mb-4">
-            <h6 class="font-semibold">Account Name</h6>
-            <p>Kings Embassy Church</p>
-          </div>
-          <div class="mb-4">
-            <h6 class="font-semibold">Account Number</h6>
-            <p>1234567890</p>
-          </div>
-          <div class="mb-4">
-            <h6 class="font-semibold">Sort Code</h6>
-            <p>12-34-56</p>
-          </div>
-          <div>
-            <h6 class="font-semibold">Reference</h6>
-            <p>Please use your name as reference</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Mobile Money Modal -->
-  <div class="modal fade" id="mobileMoneyModal" tabindex="-1">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Mobile Money Numbers</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
-        <div class="modal-body">
-          <div class="mb-4">
-            <h6 class="font-semibold">MTN Mobile Money</h6>
-            <p>+1 234 567 890</p>
-          </div>
-          <div class="mb-4">
-            <h6 class="font-semibold">Airtel Money</h6>
-            <p>+1 234 567 891</p>
-          </div>
-          <div>
-            <h6 class="font-semibold">Reference</h6>
-            <p>Please use your name as reference</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- Footer -->
   <footer class="bg-gray-900 text-white py-12">
