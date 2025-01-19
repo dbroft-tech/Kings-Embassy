@@ -32,6 +32,8 @@ function initializeApp() {
     setupOnlineGivingForm();
     setupContactForm();
     initializeMap();
+    setupLazyLoading();
+    setupDynamicLoading();
 }
 
 /**
@@ -535,6 +537,126 @@ function initializeMap() {
             animation: google.maps.Animation.DROP
         });
     }
+}
+
+/**
+ * Performance Optimization
+ */
+
+// Lazy Loading Images
+function setupLazyLoading() {
+    const images = document.querySelectorAll('img[data-src]');
+    const imageOptions = {
+        root: null,
+        threshold: 0,
+        rootMargin: '50px'
+    };
+
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.classList.remove('lazy');
+                observer.unobserve(img);
+            }
+        });
+    }, imageOptions);
+
+    images.forEach(img => imageObserver.observe(img));
+}
+
+// Dynamic Content Loading
+function setupDynamicLoading() {
+    const dynamicSections = document.querySelectorAll('[data-dynamic-load]');
+    const loadingSpinner = '<div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div>';
+
+    dynamicSections.forEach(section => {
+        const endpoint = section.dataset.dynamicLoad;
+        section.innerHTML = loadingSpinner;
+
+        // Simulate API call (replace with actual API endpoints)
+        setTimeout(() => {
+            fetch(endpoint)
+                .then(response => response.json())
+                .then(data => {
+                    section.innerHTML = generateContentHTML(data, section.dataset.contentType);
+                })
+                .catch(error => {
+                    section.innerHTML = '<div class="alert alert-danger">Failed to load content. Please try again later.</div>';
+                    console.error('Error loading dynamic content:', error);
+                });
+        }, 1000);
+    });
+}
+
+// Generate HTML for dynamic content
+function generateContentHTML(data, contentType) {
+    switch (contentType) {
+        case 'testimonies':
+            return generateTestimoniesHTML(data);
+        case 'events':
+            return generateEventsHTML(data);
+        case 'prayers':
+            return generatePrayersHTML(data);
+        default:
+            return '<div class="alert alert-warning">Unknown content type</div>';
+    }
+}
+
+// Generate HTML for different content types
+function generateTestimoniesHTML(testimonies) {
+    return testimonies.map(testimony => `
+        <div class="card mb-4">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    <img src="${testimony.authorImage}" class="rounded-circle me-3" width="48" height="48" alt="${testimony.author}">
+                    <div>
+                        <h5 class="card-title mb-0">${testimony.author}</h5>
+                        <small class="text-muted">${testimony.date}</small>
+                    </div>
+                </div>
+                <p class="card-text">${testimony.content}</p>
+                <span class="badge bg-primary">${testimony.category}</span>
+            </div>
+        </div>
+    `).join('');
+}
+
+function generateEventsHTML(events) {
+    return events.map(event => `
+        <div class="card mb-4">
+            <img src="${event.image}" class="card-img-top" alt="${event.title}">
+            <div class="card-body">
+                <h5 class="card-title">${event.title}</h5>
+                <p class="card-text">${event.description}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <small class="text-muted">
+                        <i class="bi bi-calendar"></i> ${event.date}
+                        <i class="bi bi-clock ms-2"></i> ${event.time}
+                    </small>
+                    <a href="#" class="btn btn-primary btn-sm">Register</a>
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
+function generatePrayersHTML(prayers) {
+    return prayers.map(prayer => `
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">${prayer.title}</h5>
+                <p class="card-text">${prayer.request}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <small class="text-muted">Submitted by ${prayer.author} on ${prayer.date}</small>
+                    <button class="btn btn-outline-primary btn-sm">
+                        <i class="bi bi-heart"></i> Pray
+                    </button>
+                </div>
+            </div>
+        </div>
+    `).join('');
 }
 
 /**

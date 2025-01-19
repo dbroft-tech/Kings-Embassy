@@ -1,0 +1,29 @@
+# Kings Embassy Website Robots.txt
+# Updated: 2025-01-19
+
+User-agent: *
+Allow: /
+Allow: /html/
+Allow: /image/
+Allow: /css/
+Allow: /js/
+
+# Disallow admin and sensitive directories
+Disallow: /admin/
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /vendor/
+Disallow: /logs/
+Disallow: /backup/
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /*.txt$
+Disallow: /*?*
+
+# Crawl-delay for all bots
+Crawl-delay: 10
+
+# Sitemaps
+Sitemap: https://kingsembassy.org/sitemap.xml
+Sitemap: https://kingsembassy.org/sitemap-media.xml
+Sitemap: https://kingsembassy.org/sitemap-sermons.xml
