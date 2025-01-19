@@ -1,182 +1,229 @@
  <!DOCTYPE html>
-<html lang="en">
- <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Welcome to Kings Embassy - A Place of Divine Encounter">
-  <meta name="keywords" content="Kings Embassy, church, worship, faith, community">
-  <!-- Critical CSS -->
-  <style id="critical-css">
-    /* Add critical CSS here */
-    body { opacity: 1; }
-    .hero { min-height: 60vh; }
-  </style>
-  <!-- Deferred CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" data-defer>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" data-defer>
-  <link rel="stylesheet" href="./css/style.css" data-defer>
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
-  <script src="./js/script.js" defer></script>
-  <script src="./js/optimize.js" defer></script>
-  <script>
-    // Register Service Worker
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/js/service-worker.js')
-          .then(registration => {
-            console.log('ServiceWorker registration successful');
-          })
-          .catch(err => {
-            console.log('ServiceWorker registration failed: ', err);
-          });
-      });
-    }
-  </script>
-  <link rel="shortcut icon" href="./image/favicon.ico" type="image/x-icon">
-  <title>Kings Embassy - A Place of Divine Encounter</title>
- </head>
- <body class="min-h-screen bg-gray-50">
-  <!-- Header/Navigation -->
-  <header class="bg-white shadow-sm sticky top-0 z-50">
-    <nav class="navbar navbar-expand-lg container">
-      <div class="container-fluid">
-        <a class="navbar-brand font-bold text-2xl" href="index.html">
-          Kings Embassy
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link active" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="html/about.html">About Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="html/testimonies.html">Testimonies</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="html/first-timers.html">First Timers</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="html/new-converts.html">New Converts</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="html/prayer-request.html">Prayer Request</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="html/contact.html">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
-
-  <!-- Main Content -->
-  <main class="container mx-auto px-4 py-8">
-    <!-- Hero Section -->
-    <section class="text-center py-12 md:py-20">
-      <h1 class="text-4xl md:text-6xl font-bold mb-4">Welcome to Kings Embassy</h1>
-      <p class="text-xl text-gray-600 mb-8">A place of divine encounter</p>
-      <div class="space-x-4">
-        <a href="html/first-timers.html" class="btn btn-primary btn-lg">Plan Your Visit</a>
-        <a href="#service-times" class="btn btn-outline-primary btn-lg">Service Times</a>
-      </div>
-    </section>
-
-    <!-- Service Times -->
-    <section id="service-times" class="py-12">
-      <div class="card">
-        <div class="card-body">
-          <h2 class="card-title text-3xl font-bold text-center mb-8">Service Times</h2>
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="text-center p-4">
-              <h3 class="text-xl font-semibold mb-2">Sunday Service</h3>
-              <p>9:00 AM - 11:30 AM</p>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to Kings Embassy - A Place of Divine Encounter">
+    <meta name="keywords" content="Kings Embassy, church, worship, faith, community">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Critical CSS -->
+    <style id="critical-css">
+        /* Add critical CSS here */
+        body { opacity: 1; }
+        .hero { min-height: 60vh; }
+    </style>
+    
+    <!-- Design System -->
+    <link rel="stylesheet" href="css/design-system.css">
+    
+    <!-- Deferred CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" data-defer>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" data-defer>
+    <link rel="stylesheet" href="css/style.css" data-defer>
+    
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="js/script.js" defer></script>
+    <script src="js/optimize.js" defer></script>
+    <script src="js/design-system.js" defer></script>
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="image/favicon.ico" type="image/x-icon">
+    <title>Kings Embassy - A Place of Divine Encounter</title>
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#1a365d">
+</head>
+<body class="min-h-screen bg-gray-50">
+    <!-- Skip to main content -->
+    <a href="#main" id="skip-to-main" class="sr-only focus:not-sr-only">Skip to main content</a>
+    
+    <!-- Screen Reader Announcer -->
+    <div id="sr-announcer" class="sr-only" aria-live="polite"></div>
+    
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-sm">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <a href="/" class="text-2xl font-bold text-primary">Kings Embassy</a>
+                
+                <!-- Theme Toggle -->
+                <button id="theme-toggle" class="btn btn-sm btn-outline" aria-label="Switch theme">
+                    <i class="bi bi-sun"></i>
+                </button>
+                
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden btn btn-sm" aria-label="Toggle menu" data-toggle="mobile-menu">
+                    <i class="bi bi-list"></i>
+                </button>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex space-x-6">
+                    <a href="/" class="nav-link active">Home</a>
+                    <a href="/about" class="nav-link">About Us</a>
+                    <a href="/testimonies" class="nav-link">Testimonies</a>
+                    <a href="/first-timers" class="nav-link">First Timers</a>
+                    <a href="/prayer-request" class="nav-link">Prayer Request</a>
+                    <a href="/contact" class="nav-link">Contact</a>
+                </div>
             </div>
-            <div class="text-center p-4">
-              <h3 class="text-xl font-semibold mb-2">Bible Study</h3>
-              <p>Wednesday 6:00 PM - 7:30 PM</p>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="lg:hidden hidden mt-4">
+                <div class="flex flex-col space-y-2">
+                    <a href="/" class="nav-link active">Home</a>
+                    <a href="/about" class="nav-link">About Us</a>
+                    <a href="/testimonies" class="nav-link">Testimonies</a>
+                    <a href="/first-timers" class="nav-link">First Timers</a>
+                    <a href="/prayer-request" class="nav-link">Prayer Request</a>
+                    <a href="/contact" class="nav-link">Contact</a>
+                </div>
             </div>
-            <div class="text-center p-4">
-              <h3 class="text-xl font-semibold mb-2">Prayer Meeting</h3>
-              <p>Friday 6:00 PM - 7:30 PM</p>
+        </nav>
+    </header>
+    
+    <!-- Main Content -->
+    <main id="main" tabindex="-1">
+        <!-- Hero Section -->
+        <section class="hero bg-primary text-white py-20">
+            <div class="container mx-auto px-4">
+                <div class="max-w-3xl mx-auto text-center">
+                    <h1 class="text-5xl font-bold mb-6 fade-in">Welcome to Kings Embassy</h1>
+                    <p class="text-xl mb-8 slide-in">A Place of Divine Encounter</p>
+                    <div class="space-x-4">
+                        <a href="/about" class="btn btn-lg btn-outline text-white border-white hover:bg-white hover:text-primary">
+                            Learn More
+                        </a>
+                        <a href="/first-timers" class="btn btn-lg bg-white text-primary hover:bg-gray-100">
+                            First Time?
+                        </a>
+                    </div>
+                </div>
             </div>
-          </div>
+        </section>
+        
+        <!-- Services Section -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl text-center mb-12">Our Services</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Sunday Service -->
+                    <div class="card" data-animate="fade-up">
+                        <div class="card-body text-center">
+                            <i class="bi bi-sun text-4xl text-primary mb-4"></i>
+                            <h3 class="text-2xl mb-4">Sunday Service</h3>
+                            <p class="mb-4">Join us every Sunday for a powerful time of worship</p>
+                            <p class="text-lg font-semibold">9:00 AM - 11:30 AM</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Bible Study -->
+                    <div class="card" data-animate="fade-up" data-delay="200">
+                        <div class="card-body text-center">
+                            <i class="bi bi-book text-4xl text-primary mb-4"></i>
+                            <h3 class="text-2xl mb-4">Bible Study</h3>
+                            <p class="mb-4">Dive deep into God's word every Wednesday</p>
+                            <p class="text-lg font-semibold">6:00 PM - 7:30 PM</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Prayer Meeting -->
+                    <div class="card" data-animate="fade-up" data-delay="400">
+                        <div class="card-body text-center">
+                            <i class="bi bi-heart text-4xl text-primary mb-4"></i>
+                            <h3 class="text-2xl mb-4">Prayer Meeting</h3>
+                            <p class="mb-4">Join our intercessory prayer every Friday</p>
+                            <p class="text-lg font-semibold">7:00 PM - 8:30 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Newsletter Section -->
+        <section class="py-16 bg-gray-100">
+            <div class="container mx-auto px-4">
+                <div class="max-w-2xl mx-auto text-center">
+                    <h2 class="text-4xl mb-6">Stay Connected</h2>
+                    <p class="text-lg mb-8">Subscribe to our newsletter for updates and daily devotionals</p>
+                    <form id="newsletterForm" class="space-y-4">
+                        <div>
+                            <input type="email" class="form-control" placeholder="Enter your email" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary" data-loading="Subscribing...">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-xl mb-4">Contact Us</h3>
+                    <ul class="space-y-2">
+                        <li>
+                            <i class="bi bi-geo-alt"></i>
+                            <span>123 Church Street, City</span>
+                        </li>
+                        <li>
+                            <i class="bi bi-telephone"></i>
+                            <span>+1 234 567 890</span>
+                        </li>
+                        <li>
+                            <i class="bi bi-envelope"></i>
+                            <span>info@kingsembassy.org</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/about" class="hover:text-gray-300">About Us</a></li>
+                        <li><a href="/events" class="hover:text-gray-300">Events</a></li>
+                        <li><a href="/sermons" class="hover:text-gray-300">Sermons</a></li>
+                        <li><a href="/giving" class="hover:text-gray-300">Online Giving</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Connect -->
+                <div>
+                    <h3 class="text-xl mb-4">Connect</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-gray-300">Facebook</a></li>
+                        <li><a href="#" class="hover:text-gray-300">Instagram</a></li>
+                        <li><a href="#" class="hover:text-gray-300">YouTube</a></li>
+                        <li><a href="#" class="hover:text-gray-300">Twitter</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Service Times -->
+                <div>
+                    <h3 class="text-xl mb-4">Service Times</h3>
+                    <ul class="space-y-2">
+                        <li>Sunday: 9:00 AM - 11:30 AM</li>
+                        <li>Wednesday: 6:00 PM - 7:30 PM</li>
+                        <li>Friday: 7:00 PM - 8:30 PM</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="mt-12 pt-8 border-t border-gray-800 text-center">
+                <p>&copy; 2025 Kings Embassy. All rights reserved.</p>
+            </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Quick Links -->
-    <section class="py-12">
-      <h2 class="text-3xl font-bold text-center mb-8">Quick Links</h2>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <a href="html/prayer-request.html" class="card hover:shadow-lg transition-shadow">
-          <div class="card-body text-center">
-            <i class="bi bi-pray text-4xl mb-4"></i>
-            <h3 class="card-title">Submit Prayer Request</h3>
-            <p class="text-gray-600">Let us pray with you</p>
-          </div>
-        </a>
-        <a href="html/testimonies.html" class="card hover:shadow-lg transition-shadow">
-          <div class="card-body text-center">
-            <i class="bi bi-journal-richtext text-4xl mb-4"></i>
-            <h3 class="card-title">Share Your Testimony</h3>
-            <p class="text-gray-600">Tell us what God has done</p>
-          </div>
-        </a>
-        <a href="html/new-converts.html" class="card hover:shadow-lg transition-shadow">
-          <div class="card-body text-center">
-            <i class="bi bi-book text-4xl mb-4"></i>
-            <h3 class="card-title">New Convert?</h3>
-            <p class="text-gray-600">Start your faith journey</p>
-          </div>
-        </a>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="bg-gray-900 text-white py-12">
-    <div class="container mx-auto px-4">
-      <div class="grid md:grid-cols-3 gap-8">
-        <div>
-          <h4 class="text-xl font-bold mb-4">Kings Embassy</h4>
-          <p class="mb-4">A place of divine encounter where lives are transformed through the power of God's word.</p>
-          <div class="flex space-x-4">
-            <a href="#" class="text-white hover:text-gray-300"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="text-white hover:text-gray-300"><i class="bi bi-twitter-x"></i></a>
-            <a href="#" class="text-white hover:text-gray-300"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="text-white hover:text-gray-300"><i class="bi bi-youtube"></i></a>
-          </div>
-        </div>
-        <div>
-          <h4 class="text-xl font-bold mb-4">Quick Links</h4>
-          <ul class="space-y-2">
-            <li><a href="html/about.html" class="hover:text-gray-300">About Us</a></li>
-            <li><a href="html/testimonies.html" class="hover:text-gray-300">Testimonies</a></li>
-            <li><a href="html/prayer-request.html" class="hover:text-gray-300">Prayer Request</a></li>
-            <li><a href="html/contact.html" class="hover:text-gray-300">Contact Us</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="text-xl font-bold mb-4">Contact Info</h4>
-          <ul class="space-y-2">
-            <li><i class="bi bi-geo-alt me-2"></i> 123 Church Street, City</li>
-            <li><i class="bi bi-telephone me-2"></i> +1 234 567 890</li>
-            <li><i class="bi bi-envelope me-2"></i> info@kingsembassy.org</li>
-          </ul>
-        </div>
-      </div>
-      <div class="border-t border-gray-800 mt-8 pt-8 text-center">
-        <p>&copy; 2025 Kings Embassy. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
- </body>
+    </footer>
+</body>
 </html>
